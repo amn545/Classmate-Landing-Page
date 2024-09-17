@@ -2,45 +2,58 @@
   font-family: Paris_2024;
   src: url(./Fonts/Paris2024-Variable.ttf);
 }
+
 @font-face {
   font-family: FIFA;
   src: url(./Fonts/fifawelcome1.3.ttf);
 }
+
 @font-face {
   font-family: Gilroy_Medium;
   src: url(./Fonts/Gilroy-Medium.ttf);
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-html, body{
+html,
+body {
   width: 100%;
   height: 100%;
   scrollbar-width: none;
 }
 
-.main{
+.main {
   width: 100%;
   height: 100%;
 }
 
-.navbar{
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
-  background-color: #001722;box-sizing: border-box;  width: 100%;
+  background-color: #001722;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
   height: 12.5vh;
 }
 
-.logo, img{
+.logo,
+img {
   margin-left: 5rem;
   height: 7vh;
 }
 
-.Track, p{
+.Track,
+p {
   font-family: "Gilroy_Medium";
   font-weight: 800;
   color: #fff;
@@ -50,7 +63,8 @@ html, body{
 
 
 
-.Design, p{
+.Design,
+p {
   font-family: "Gilroy_Medium";
   font-weight: 800;
   color: #fff;
@@ -67,7 +81,11 @@ html, body{
   margin-left: 2rem;
   background: transparent;
   overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -81,6 +99,15 @@ span {
   left: 0;
   width: 0;
   height: 5px;
+  background: -webkit-gradient(linear,
+      left top, right top,
+      color-stop(50%, transparent),
+      color-stop(rgb(255, 255, 255)),
+      to(rgb(255, 255, 255)));
+  background: -o-linear-gradient(left,
+      transparent 50%,
+      rgb(255, 255, 255),
+      rgb(255, 255, 255));
   background: linear-gradient(90deg,
       transparent 50%,
       rgb(255, 255, 255),
@@ -91,6 +118,15 @@ span {
   right: 0;
   bottom: 0;
   height: 5px;
+  background: -webkit-gradient(linear,
+      left top, right top,
+      from(rgb(255, 255, 255)),
+      color-stop(rgb(255, 255, 255)),
+      color-stop(50%, transparent));
+  background: -o-linear-gradient(left,
+      rgb(255, 255, 255),
+      rgb(255, 255, 255),
+      transparent 50%);
   background: linear-gradient(90deg,
       rgb(255, 255, 255),
       rgb(255, 255, 255),
@@ -102,6 +138,15 @@ span {
   right: 0;
   width: 5px;
   height: 0;
+  background: -webkit-gradient(linear,
+      left top, left bottom,
+      color-stop(30%, transparent),
+      color-stop(rgb(255, 255, 255)),
+      to(rgb(255, 255, 255)));
+  background: -o-linear-gradient(top,
+      transparent 30%,
+      rgb(255, 255, 255),
+      rgb(255, 255, 255));
   background: linear-gradient(180deg,
       transparent 30%,
       rgb(255, 255, 255),
@@ -113,6 +158,15 @@ span {
   bottom: 0;
   width: 5px;
   height: 0;
+  background: -webkit-gradient(linear,
+      left top, left bottom,
+      from(rgb(255, 255, 255)),
+      color-stop(rgb(255, 255, 255)),
+      color-stop(70%, transparent));
+  background: -o-linear-gradient(top,
+      rgb(255, 255, 255),
+      rgb(255, 255, 255),
+      transparent 70%);
   background: linear-gradient(180deg,
       rgb(255, 255, 255),
       rgb(255, 255, 255),
@@ -120,19 +174,35 @@ span {
 }
 
 .top {
+  -webkit-animation: animateTop 3s ease-in-out infinite;
   animation: animateTop 3s ease-in-out infinite;
 }
 
 .bottom {
+  -webkit-animation: animateBottom 3s ease-in-out infinite;
   animation: animateBottom 3s ease-in-out infinite;
 }
 
 .right {
+  -webkit-animation: animateRight 3s ease-in-out infinite;
   animation: animateRight 3s ease-in-out infinite;
 }
 
 .left {
+  -webkit-animation: animateLeft 3s ease-in-out infinite;
   animation: animateLeft 3s ease-in-out infinite;
+}
+
+@-webkit-keyframes animateTop {
+  25% {
+    width: 100%;
+    opacity: 1;
+  }
+
+  30%,
+  100% {
+    opacity: 0;
+  }
 }
 
 @keyframes animateTop {
@@ -142,6 +212,25 @@ span {
   }
 
   30%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes animateBottom {
+
+  0%,
+  50% {
+    opacity: 0;
+    width: 0;
+  }
+
+  75% {
+    opacity: 1;
+    width: 100%;
+  }
+
+  76%,
   100% {
     opacity: 0;
   }
@@ -166,6 +255,26 @@ span {
   }
 }
 
+@-webkit-keyframes animateRight {
+
+  0%,
+  25% {
+    opacity: 0;
+    height: 0;
+  }
+
+  50% {
+    opacity: 1;
+    height: 100%;
+  }
+
+  55%,
+  100% {
+    height: 100%;
+    opacity: 0;
+  }
+}
+
 @keyframes animateRight {
 
   0%,
@@ -183,6 +292,21 @@ span {
   100% {
     height: 100%;
     opacity: 0;
+  }
+}
+
+@-webkit-keyframes animateLeft {
+
+  0%,
+  75% {
+    opacity: 0;
+    bottom: 0;
+    height: 0;
+  }
+
+  100% {
+    opacity: 1;
+    height: 100%;
   }
 }
 
@@ -208,19 +332,23 @@ span {
   font-size: 1.5vw
 }
 
-.log{
+.log {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
-#user{
+#user {
   color: #fff;
   font-weight: 800;
   margin-left: 3vw;
   font-size: 1.5vw;
 }
 
-.login{
+.login {
   font-family: "Gilroy_Medium";
   font-weight: 500;
   color: #fff;
@@ -228,7 +356,8 @@ span {
   font-size: 1.2vw;
 }
 
-.typography, h4{
+.typography,
+h4 {
   font-size: 1.2rem;
   color: #424144;
   font-weight: 500;
@@ -237,7 +366,8 @@ span {
   text-align: center;
 }
 
-.typo, h3{
+.typo,
+h3 {
   font-size: 1.7rem;
   color: #313033;
   text-align: center;
@@ -246,26 +376,28 @@ span {
   font-family: "Paris_2024";
 }
 
-.make-it{
+.make-it {
   width: 90%;
   height: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-left: 5%;
   margin-right: 5%;
   margin-top: 2rem;
 }
 
-.box1{
+.box1 {
   width: 45%;
   height: 100%;
 }
 
-.box2{
+.box2 {
   width: 55%;
   height: 100%;
 }
 
-h5{
+h5 {
   padding-left: 2rem;
   padding-top: 3rem;
   color: #313033;
@@ -274,7 +406,7 @@ h5{
   font-family: "Gilroy_Medium";
 }
 
-ol{
+ol {
   padding-top: 3.5rem;
   padding-left: 3rem;
   font-family: "Gilroy_Medium";
@@ -282,7 +414,7 @@ ol{
   line-height: 2.3rem;
 }
 
-button{
+button {
   margin-left: 3rem;
   margin-top: 2.5rem;
   font-weight: 900;
@@ -298,13 +430,15 @@ button{
 .flex-align-item {
   width: 90%;
   height: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-left: 5%;
   margin-right: 5%;
   margin-top: 3rem;
 }
 
- video{
+video {
   width: 90%;
   height: 100%;
   margin-left: 5rem;
@@ -312,10 +446,12 @@ button{
   background: #fff;
 }
 
-.index-style{
+.index-style {
   width: 90%;
   border-radius: 0.5rem;
   height: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   background-color: #EFF5FF;
   margin-left: 5%;
@@ -323,7 +459,7 @@ button{
   margin-top: 3rem;
 }
 
-.bx1{
+.bx1 {
   width: 30%;
   height: 100%;
 }
@@ -338,9 +474,11 @@ button{
   height: 100%;
 }
 
-.Join{
+.Join {
   width: 75%;
   height: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   border-radius: 0.5rem;
   overflow: hidden;
@@ -362,6 +500,8 @@ button{
 .best-design {
   width: 90%;
   height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   border-radius: 0.5rem;
   overflow: hidden;
@@ -370,12 +510,12 @@ button{
   margin-top: 1rem;
 }
 
-.sm1{
+.sm1 {
   width: 60%;
   height: 100%;
 }
 
-.sm2{
+.sm2 {
   width: 40%;
   height: 100%;
 }
@@ -383,6 +523,8 @@ button{
 .special {
   width: 90%;
   height: 55%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   border-radius: 0.5rem;
   overflow: hidden;
@@ -391,17 +533,17 @@ button{
   margin-top: 1rem;
 }
 
-.ts1{
+.ts1 {
   width: 45%;
   height: 100%;
 }
 
-.ts2{
+.ts2 {
   width: 55%;
   height: 100%;
 }
 
-.index-styled{
+.index-styled {
   width: 60%;
   height: 45%;
   border-radius: 0.5rem;
@@ -411,26 +553,28 @@ button{
   margin-top: 1rem;
 }
 
-.footer{
+.footer {
   width: 100%;
   height: 90%;
   background: #001722;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   overflow: hidden;
   margin-top: 0.5rem;
 }
 
-.acc1{
+.acc1 {
   width: 30%;
   height: 95%;
 }
 
-.acc2{
+.acc2 {
   width: 40%;
   height: 95%;
 }
 
-.acc3{
+.acc3 {
   width: 30%;
   height: 95%;
 }
